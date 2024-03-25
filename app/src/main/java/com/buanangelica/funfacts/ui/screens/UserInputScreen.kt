@@ -17,6 +17,7 @@ import androidx.navigation.compose.rememberNavController
 import com.buanangelica.funfacts.R
 import com.buanangelica.funfacts.data.UserDataUiEvents
 import com.buanangelica.funfacts.ui.AnimalCard
+import com.buanangelica.funfacts.ui.ButtonComponent
 import com.buanangelica.funfacts.ui.TextComponent
 import com.buanangelica.funfacts.ui.TextFieldComponent
 import com.buanangelica.funfacts.ui.TopBar
@@ -80,6 +81,18 @@ fun UserInputScreen(userInputViewModel: UserInputViewModel) {
                     )
                 }, selected = userInputViewModel.uiState.value.animalSelected=="Dog")
             }
+
+            Spacer(modifier = Modifier.weight(1f))
+
+            if(userInputViewModel.isValidState()
+                ){
+                ButtonComponent (
+                    goToDetailsScreen = {
+
+                    }
+                )
+            }
+
 
 
 
